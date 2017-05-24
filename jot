@@ -1,0 +1,6 @@
+#!/bin/bash
+
+timestamp="$(date +%s)"
+fname="/tmp/jot-${timestamp}.txt"
+
+nano "${fname}"
