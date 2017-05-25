@@ -1,6 +1,15 @@
 #!/bin/bash
 
 timestamp="$(date +%s)"
-fname="/tmp/jot-${timestamp}.txt"
+fname="/tmp/jot-${timestamp}"
+
+if [ $# -gt 0 ]; then
+    for word in $@ ; do
+        title="${title}-${word}"
+    done
+    fname="${fname}${title}"
+fi
+
+fname="${fname}.txt"
 
 nano "${fname}"
