@@ -12,4 +12,5 @@ fi
 
 fname="${fname}.txt"
 
-nano "${fname}"
+cmd=${EDITOR:-${VISUAL:-nano}}
+"${cmd}" "${fname}"
