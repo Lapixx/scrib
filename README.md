@@ -1,11 +1,11 @@
-# Jot
+# Scrib
 Quickly write down some notes from your terminal
 
 ## Installation
 
 ```bash
-git clone https://github.com/Lapixx/Jot
-cd Jot
+git clone https://github.com/Lapixx/scrib
+cd scrib
 make install
 ```
 
@@ -13,8 +13,8 @@ make install
 
 ```bash
 # passing a title
-jot Team meeting notes
+scrib Team meeting notes
 
 # or when in a hurry
-jot
+scrib
 ```

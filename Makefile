@@ -1,4 +1,4 @@
-BIN_FILE=jot
+BIN_FILE=scrib
 BIN_DIR=/usr/local/bin
 
 BOLD=\033[1;37m

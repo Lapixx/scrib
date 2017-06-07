@@ -5,7 +5,7 @@ ext=".txt"
 def_cmd="nano"
 
 timestamp="$(date +%s)"
-bname="jot-${timestamp}"
+bname="scrib-${timestamp}"
 if [ $# -gt 0 ]; then
     for word in $@ ; do
         title="${title}-${word}"
