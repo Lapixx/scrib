@@ -14,3 +14,9 @@ fname="${fname}.txt"
 
 cmd=${EDITOR:-${VISUAL:-nano}}
 "${cmd}" "${fname}"
+
+if [ -e "${fname}" ]; then
+    printf "Saved to ${fname}\n"
+else
+    printf "Nothing written\n"
+fi
