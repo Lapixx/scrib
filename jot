@@ -6,7 +6,6 @@ def_cmd="nano"
 
 timestamp="$(date +%s)"
 bname="jot-${timestamp}"
-
 if [ $# -gt 0 ]; then
     for word in $@ ; do
         title="${title}-${word}"
@@ -17,10 +16,14 @@ fi
 cmd=${EDITOR:-${VISUAL:-$def_cmd}}
 fname="${dir}/${bname}${ext}"
 
+esc="\033["
+cyan="${esc}1;37m"
+reset="${esc}0m"
+
 "${cmd}" "${fname}"
 
 if [ -e "${fname}" ]; then
-    printf "Saved to ${fname}\n"
+    printf "Saved to ${cyan}${fname}${reset}\n"
 else
     printf "Nothing written\n"
 fi
