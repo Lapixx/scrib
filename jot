@@ -1,18 +1,22 @@
 #!/bin/bash
 
+dir="/tmp"
+ext=".txt"
+def_cmd="nano"
+
 timestamp="$(date +%s)"
-fname="/tmp/jot-${timestamp}"
+bname="jot-${timestamp}"
 
 if [ $# -gt 0 ]; then
     for word in $@ ; do
         title="${title}-${word}"
     done
-    fname="${fname}${title}"
+    bname="${bname}${title}"
 fi
 
-fname="${fname}.txt"
+cmd=${EDITOR:-${VISUAL:-$def_cmd}}
+fname="${dir}/${bname}${ext}"
 
-cmd=${EDITOR:-${VISUAL:-nano}}
 "${cmd}" "${fname}"
 
 if [ -e "${fname}" ]; then
